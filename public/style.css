@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 * {
   padding: 0;
   margin: 0;
@@ -9,12 +11,12 @@ html {
 body {
   background: #eee;
   background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
-  padding: 0 16px;
+    padding-bottom: 40rem;
 }
 
 header {
+    width: 100vw;
   background-color: #f5ba13;
-  margin: auto -16px;
   padding: 16px 32px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 }
@@ -26,7 +28,7 @@ header h1 {
 }
 
 footer {
-  position: absolute;
+  position: fixed;
   text-align: center;
   bottom: 0;
   width: 100%;
@@ -34,7 +36,7 @@ footer {
 }
 
 footer p {
-  color: #ccc;
+  color: gray;
 }
 .note {
   background: #fff;
@@ -70,13 +72,25 @@ footer p {
 
 form.create-note {
   position: relative;
-  width: 480px;
   margin: 30px auto 20px auto;
   background: #fff;
   padding: 15px;
   border-radius: 7px;
   box-shadow: 0 1px 5px rgb(138, 137, 137);
 }
+
+@media (width >= 768px) {
+  form.create-note {
+      width: 480px;
+  }
+}
+
+@media (width <= 768px) {
+  form.create-note {
+      width: 380px;
+  }
+}
+
 form.create-note input,
 form.create-note textarea {
   width: 100%;

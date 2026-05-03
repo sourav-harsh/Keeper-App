@@ -11,7 +11,7 @@ function CreateArea(props) {
       return !prev;
     });
   }
-  
+
   return (
     <form className="create-note">
       <input
@@ -32,7 +32,7 @@ function CreateArea(props) {
           rows={effect?"3":"1"}
         />
       <Zoom in={effect?true:false}>
-        <Fab onClick={props.add}>
+        <Fab onClick={props.add} >
           <AddIcon />
         </Fab>
       </Zoom>
