@@ -16,7 +16,7 @@ function App() {
         getItems();
     }, []);
 
-    useEffect((items) => {
+    useEffect(() => {
         storeItems(items);
     }, [items]);
 
@@ -42,7 +42,7 @@ function App() {
     }
 
     function storeItems(_items) {
-        localStorage.setItem(CACHE_KEY, JSON.stringify(items));
+        localStorage.setItem(CACHE_KEY, JSON.stringify(_items));
     }
 
     function getItems() {
