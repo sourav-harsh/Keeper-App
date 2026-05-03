@@ -87,7 +87,7 @@ form.create-note {
 
 @media (width <= 768px) {
   form.create-note {
-      width: 380px;
+      width: 90%;
   }
 }
 
