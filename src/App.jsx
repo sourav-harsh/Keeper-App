@@ -16,8 +16,8 @@ function App() {
         getItems();
     }, []);
 
-    useEffect(() => {
-        storeItems();
+    useEffect((items) => {
+        storeItems(items);
     }, [items]);
 
     function handleChange(event) {
@@ -41,13 +41,14 @@ function App() {
         event.preventDefault();
     }
 
-    function storeItems() {
+    function storeItems(_items) {
         localStorage.setItem(CACHE_KEY, JSON.stringify(items));
     }
 
     function getItems() {
         const cacheItems = localStorage.getItem(CACHE_KEY);
-        if (cacheItems === null) return;
+        if (cacheItems === null || cacheItems === 'undefined') return;
+        console.log(cacheItems);
         const jsonItems = JSON.parse(cacheItems);
         setItems(jsonItems);
     }
